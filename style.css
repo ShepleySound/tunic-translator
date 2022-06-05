@@ -1,0 +1,27 @@
+svg {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: flex;
+}
+
+.glyph-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 5em);
+  grid-template-rows: repeat(5, 10em);
+}
+
+.glyph-container {
+  height: 10em;
+}
+
+.glyph {
+  position: absolute;
+}
+
+.glyph {
+  height: 10em;
+  width: 5em;
+}
