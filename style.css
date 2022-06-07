@@ -1,27 +1,127 @@
+body {
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+}
 svg {
   margin: 0px;
   padding: 0px;
 }
 
-body {
-  display: flex;
-}
-
 .glyph-grid {
-  display: grid;
-  grid-template-columns: repeat(10, 5em);
-  grid-template-rows: repeat(5, 10em);
+  row-gap: 8px;
+  border: 4px solid #484848;
+  background-color: #242424;
+  /* width: 80vmin; */
 }
 
 .glyph-container {
-  height: 10em;
+  height: 3em;
+  width: 1.5em;
 }
 
 .glyph {
   position: absolute;
+  height: 3em;
+  width: 1.5em;
+  pointer-events: none;
 }
 
-.glyph {
-  height: 10em;
-  width: 5em;
+.button-grids-container {
+  display: grid;
+  height: 25em;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 2em 2em calc(3em + .5em) calc(3em + .5em) 3em .5em 3em;
+  /* grid-template-rows: 2em 1fr 1fr 1fr 1fr 3em; */
+  grid-template-areas: 
+    "cl . vl"
+    ". . ."
+    "c al v"
+    "c a v"
+    "c . v"
+    ". . ."
+    "cb . vb";
+  justify-items: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.glyph-button-container {
+  gap: .5em;
+}
+
+.consonant-button-container {
+  grid-area: c;
+}
+
+.vowel-button-container {
+  grid-area: v;
+}
+
+.glyph-button {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(1.5em + 3px);
+  background-color: #dddddd;
+  border-radius: 1em;
+}
+
+.glyph-space {
+  background-color: #cccccc;
+}
+
+.glyph-space:hover {
+  background-color: #eebbbbaa;
+} 
+.glyph-button:hover {
+  background-color: #eeeeff;
+}
+
+.selected {
+  background-color: #eeccaaaa;
+}
+
+.blank-button {
+  height: 3em;
+  width: 1.5em;
+}
+
+.vowel-blank-button {
+  grid-area: vb;
+}
+
+.consonant-blank-button {
+  grid-area: cb;
+}
+
+.swapper-accent-button {
+  height: 3em;
+  width: 1.5em;
+  grid-area: a;
+}
+
+.consonant-label,
+.vowel-label,
+.accent-label {
+  color: #dddddd;
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+}
+
+.consonant-label {
+  grid-area: cl;
+}
+
+.vowel-label {
+  grid-area: vl;
+}
+
+.accent-label {
+  grid-area: al;
 }
